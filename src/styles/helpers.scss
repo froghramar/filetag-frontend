@@ -1,0 +1,50 @@
+@for $i from 0 through 100 {
+
+	.margin-#{$i} {
+		margin: 0px + $i;
+	}
+	.margin-top-#{$i} {
+		margin-top: 0px + $i;
+	}
+	.margin-bottom-#{$i} {
+		margin-bottom: 0px + $i;
+	}
+	.margin-left-#{$i} {
+		margin-left: 0px + $i;
+	}
+	.margin-bottom-#{$i} {
+		margin-right: 0px + $i;
+	}
+
+	.padding-#{$i} {
+		padding: 0px + $i;
+	}
+	.padding-top-#{$i} {
+		padding-top: 0px + $i;
+	}
+	.padding-bottom-#{$i} {
+		padding-bottom: 0px + $i;
+	}
+	.padding-left-#{$i} {
+		padding-left: 0px + $i;
+	}
+	.padding-bottom-#{$i} {
+		padding-right: 0px + $i;
+	}
+
+	@for $j from 0 through 100 {
+
+		.margin-#{$i}-#{$j} {
+			margin: (0px + $i) (0px + $j);
+		}
+
+		.padding-#{$i}-#{$j} {
+			padding: (0px + $i) (0px + $j);
+		}
+
+	}
+
+	.margin-0-auto {
+		margin: 0 auto;
+	}
+}

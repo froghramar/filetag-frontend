@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSidenavModule, MatButtonModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
+		SidenavComponent
 	],
 	imports: [
 		BrowserAnimationsModule,
-		MatSidenavModule,
-		MatButtonModule
+		MatSidenavModule
 	],
 	providers: [],
 	bootstrap: [
