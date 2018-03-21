@@ -1,12 +1,18 @@
 <div>
 	<app-sidenav *ngIf="isSidenavOpened" class="position-absolute background-color-white">
 	</app-sidenav>
-	<div class="main-content margin-0-auto padding-20-35">
-		<button class="position-absolute margin-left-minus-30 margin-top-minus-15 padding-2-8"
+	<div class="main-content margin-0-auto padding-20-35 bordered"
+		 [ngClass]="{ 'full-width': isFullWidthEnabled }">
+		<span class="position-absolute margin-left-minus-30 margin-top-minus-15 padding-2-8 cursor-pointer"
 		(click)="toggleSidenav()" [ngSwitch]="isSidenavOpened">
-			<span *ngSwitchCase="true">&#9002;</span>
-			<span *ngSwitchDefault>&#9001;</span>
-		</button>
+			<mat-icon *ngSwitchCase="true">keyboard_arrow_right</mat-icon>
+			<mat-icon *ngSwitchDefault>keyboard_arrow_left</mat-icon>
+		</span>
+		<span class="position-absolute margin-top-minus-15 cursor-pointer"
+			  (click)="toggleFullWidth()" [ngSwitch]="isFullWidthEnabled">
+			<mat-icon *ngSwitchCase="true">fullscreen_exit</mat-icon>
+			<mat-icon *ngSwitchDefault>fullscreen</mat-icon>
+		</span>
 		<router-outlet>
 		</router-outlet>
 	</div>

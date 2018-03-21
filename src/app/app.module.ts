@@ -5,12 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { MatTabsModule } from '@angular/material';
+import { MatIconModule, MatTabsModule } from '@angular/material';
 
 @NgModule({
 	imports: [
 		BrowserAnimationsModule,
 		MatTabsModule,
+		MatIconModule,
 		RouterModule.forRoot([
 			{
 				path: '',

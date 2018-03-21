@@ -98,3 +98,19 @@ $displays: inline block flex grid inline-block inline-flex inline-grid inline-ta
 		display: $display;
 	}
 }
+
+.bordered {
+	border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.full-width {
+	width: 100% !important;
+}
+
+$cursors: auto pointer;
+
+@each $cursor in $cursors {
+	.cursor-#{$cursor} {
+		cursor: $cursor;
+	}
+}

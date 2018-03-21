@@ -8,10 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
 	isSidenavOpened = true;
+	isFullWidthEnabled = false;
 
 	constructor() { }
 
 	toggleSidenav () {
 		this.isSidenavOpened = !this.isSidenavOpened;
+	}
+
+	toggleFullWidth() {
+		this.isFullWidthEnabled = !this.isFullWidthEnabled;
 	}
 }
