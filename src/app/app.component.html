@@ -1,7 +1,13 @@
 <div>
-	<app-sidenav class="position-absolute">
+	<app-sidenav *ngIf="isSidenavOpened" class="position-absolute background-color-white">
 	</app-sidenav>
-	<div class="main-content margin-0-auto padding-20-35 background-color-aqua">
-		<router-outlet></router-outlet>
+	<div class="main-content margin-0-auto padding-20-35">
+		<button class="position-absolute margin-left-minus-30 margin-top-minus-15 padding-2-8"
+		(click)="toggleSidenav()" [ngSwitch]="isSidenavOpened">
+			<span *ngSwitchCase="true">&#9002;</span>
+			<span *ngSwitchDefault>&#9001;</span>
+		</button>
+		<router-outlet>
+		</router-outlet>
 	</div>
 </div>

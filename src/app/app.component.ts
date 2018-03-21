@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+	isSidenavOpened = true;
+
 	constructor() { }
+
+	toggleSidenav () {
+		this.isSidenavOpened = !this.isSidenavOpened;
+	}
 }
