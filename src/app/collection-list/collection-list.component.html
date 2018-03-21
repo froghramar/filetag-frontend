@@ -1,10 +1,12 @@
 <div>
-	<mat-form-field>
-		<input matInput placeholder="Search">
-		<span matSuffix><mat-icon>search</mat-icon></span>
-	</mat-form-field>
 	<mat-list>
-		<h3 mat-subheader>Collections</h3>
+		<h3 mat-subheader style="display: inline-block;">
+			Collections
+		</h3>
+		<mat-form-field>
+			<input matInput placeholder="Search">
+			<span matSuffix><mat-icon>search</mat-icon></span>
+		</mat-form-field>
 		<mat-divider></mat-divider>
 		<mat-list-item *ngFor="let collection of collections">
 			<mat-icon mat-list-icon>folder</mat-icon>
