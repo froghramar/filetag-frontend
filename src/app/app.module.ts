@@ -1,19 +1,34 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSidenavModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { CollectionListComponent } from './collection-list/collection-list.component';
+import { HomeComponent } from './home/home.component';
+import {MatTabsModule} from '@angular/material';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		SidenavComponent
+		SidenavComponent,
+		CollectionListComponent,
+		HomeComponent
 	],
 	imports: [
 		BrowserAnimationsModule,
-		MatSidenavModule
+		MatTabsModule,
+		RouterModule.forRoot([
+			{
+				path: '',
+				component: HomeComponent
+			},
+			{
+				path: 'collections',
+				component: CollectionListComponent
+			}
+		])
 	],
 	providers: [],
 	bootstrap: [
