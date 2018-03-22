@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpService} from '../../services/http.service';
+import {CollectionService} from '../collection/collection.service';
 
 @Component({
-  selector: 'app-collection-list',
-  templateUrl: './collection-list.component.html',
-  styleUrls: ['./collection-list.component.scss']
+	selector: 'app-collection-list',
+	templateUrl: './collection-list.component.html',
+	styleUrls: ['./collection-list.component.scss']
 })
 export class CollectionListComponent implements OnInit {
 
@@ -35,9 +35,17 @@ export class CollectionListComponent implements OnInit {
 		},
 	];
 
-  constructor(private httpService: HttpService) { }
+	constructor(private collectionService: CollectionService) { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+		this.collectionService.getCollections().toPromise().then(
+			data => {
+				console.log(data);
+			},
+			error => {
+				console.error(error);
+			}
+		);
+	}
 
 }

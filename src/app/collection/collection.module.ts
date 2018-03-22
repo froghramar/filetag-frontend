@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { MatFormFieldModule, MatIconModule, MatInputModule, MatListModule } from '@angular/material';
 
 import { CollectionListComponent } from '../collection-list/collection-list.component';
+import { CollectionService } from './collection.service';
 
 @NgModule({
 	imports: [
@@ -21,6 +22,9 @@ import { CollectionListComponent } from '../collection-list/collection-list.comp
 	],
 	declarations: [
 		CollectionListComponent
+	],
+	providers: [
+		CollectionService
 	]
 })
 export class CollectionModule { }

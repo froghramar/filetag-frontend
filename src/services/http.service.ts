@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class HttpService {
@@ -29,43 +30,35 @@ export class HttpService {
 		});
 	}
 
-	get(url: string, filter = null) {
+	get <T> (url: string, params = null): Observable<T> {
 
 		const httpParams: HttpParams = new HttpParams();
-		if (filter) {
-			Object.keys(filter).forEach((key: string) => {
-				httpParams.set(key, filter[key]);
+		if (params) {
+			Object.keys(params).forEach((key: string) => {
+				httpParams.set(key, params[key]);
 			});
 		}
 
-		return new Promise( (resolve: Function, reject: Function) => {
-			this.httpClient.get(url, {
-				headers: this.httpHeaders,
-				params: httpParams,
-				responseType: 'json'
-			})
-				.subscribe(
-					(response: Response) => {
-						resolve(response.text());
-					},
-					(err) => {
-						reject(err);
-					}
-				);
+		return < Observable <T> > this.httpClient.get(url, {
+			headers: this.httpHeaders,
+			params: httpParams,
+			responseType: 'json'
 		});
 	}
 
-	post(url: string, data: any) {
-		return new Promise( (resolve: Function, reject: Function) => {
-			this.httpClient.post(url, data, {headers: this.httpHeaders})
-				.subscribe(
-					(response: Response) => {
-						resolve(response);
-					},
-					(err) => {
-						reject(err);
-					}
-				);
+	post <T> (url: string, params = null, data: any): Observable<T> {
+
+		const httpParams: HttpParams = new HttpParams();
+		if (params) {
+			Object.keys(params).forEach((key: string) => {
+				httpParams.set(key, params[key]);
+			});
+		}
+
+		return < Observable <T> > this.httpClient.post(url, data, {
+			headers: this.httpHeaders,
+			params: httpParams,
+			responseType: 'json'
 		});
 	}
 
