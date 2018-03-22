@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CollectionService} from '../collection/collection.service';
+import { CollectionService } from '../collection/collection.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-collection-list',
@@ -35,7 +36,8 @@ export class CollectionListComponent implements OnInit {
 		},
 	];
 
-	constructor(private collectionService: CollectionService) { }
+	constructor(private collectionService: CollectionService,
+				private router: Router) { }
 
 	ngOnInit() {
 		this.collectionService.getCollections().toPromise().then(
@@ -46,6 +48,10 @@ export class CollectionListComponent implements OnInit {
 				console.error(error);
 			}
 		);
+	}
+
+	goToCollectionCreator() {
+		this.router.navigate(['/collections/create']);
 	}
 
 }

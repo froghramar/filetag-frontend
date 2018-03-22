@@ -5,6 +5,7 @@ import { MatFormFieldModule, MatIconModule, MatInputModule, MatListModule } from
 
 import { CollectionListComponent } from '../collection-list/collection-list.component';
 import { CollectionService } from './collection.service';
+import { CollectionCreatorComponent } from '../collection-creator/collection-creator.component';
 
 @NgModule({
 	imports: [
@@ -17,10 +18,15 @@ import { CollectionService } from './collection.service';
 			{
 				path: '',
 				component: CollectionListComponent
+			},
+			{
+				path: 'create',
+				component: CollectionCreatorComponent
 			}
-		])
+		]),
 	],
 	declarations: [
+		CollectionCreatorComponent,
 		CollectionListComponent
 	],
 	providers: [

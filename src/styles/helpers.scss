@@ -114,3 +114,11 @@ $cursors: auto pointer;
 		cursor: $cursor;
 	}
 }
+
+$floats: left right none inherit;
+
+@each $float in $floats {
+	.float-#{$float} {
+		float: $float;
+	}
+}

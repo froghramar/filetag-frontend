@@ -7,6 +7,11 @@
 			<input matInput placeholder="Search">
 			<span matSuffix><mat-icon>search</mat-icon></span>
 		</mat-form-field>
+		<mat-icon
+			class="padding-top-20 float-right cursor-pointer"
+			(click)="goToCollectionCreator()">
+			create_new_folder
+		</mat-icon>
 		<mat-divider></mat-divider>
 		<mat-list-item *ngFor="let collection of collections">
 			<mat-icon mat-list-icon>folder</mat-icon>
