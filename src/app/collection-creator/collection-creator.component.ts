@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-collection-creator',
-  templateUrl: './collection-creator.component.html',
-  styleUrls: ['./collection-creator.component.scss']
+	selector: 'app-collection-creator',
+	templateUrl: './collection-creator.component.html',
+	styleUrls: ['./collection-creator.component.scss']
 })
 export class CollectionCreatorComponent implements OnInit {
 
-  constructor() { }
+	collectionDetailsFormGroup: FormGroup;
+	folderSelectionFormGroup: FormGroup;
 
-  ngOnInit() {
-  }
+	constructor(private formBuilder: FormBuilder) { }
 
+	ngOnInit() {
+		this.collectionDetailsFormGroup = this.formBuilder.group({
+			collectionDetailsFormCtrl: ['', Validators.required]
+		});
+		this.folderSelectionFormGroup = this.formBuilder.group({
+			folderSelectionFormCtrl: ['', Validators.required]
+		});
+	}
 }

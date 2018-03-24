@@ -8,3 +8,27 @@
 		width: calc(100% - 600px);
 	}
 }
+
+:host ::ng-deep .page-header {
+	color: rgba(0, 0, 0, 0.54);
+	font-weight: normal;
+}
+
+:host ::ng-deep ol.breadcrumb {
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	margin: 0;
+	padding: 10px 20px;
+}
+
+:host ::ng-deep li.breadcrumb-item {
+	display: inline-block;
+	color: rgba(0, 0, 0, 0.54);
+}
+
+:host ::ng-deep li.breadcrumb-item:not(:last-child):after {
+	content: '\232A';
+}
+
+:host ::ng-deep a.ng-star-inserted {
+	text-decoration: none;
+}

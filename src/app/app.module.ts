@@ -9,6 +9,7 @@ import { DbService } from '../services/db.service';
 
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
 
 @NgModule({
 	imports: [
@@ -16,27 +17,34 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 		HttpClientModule,
 		MatTabsModule,
 		MatIconModule,
+		McBreadcrumbsModule.forRoot(),
 		RouterModule.forRoot([
 			{
 				path: '',
-				loadChildren: './home/home.module#HomeModule'
+				loadChildren: './home/home.module#HomeModule',
+				data: {
+					breadcrumbs: 'Home',
+				},
 			},
 			{
 				path: 'collections',
-				loadChildren: './collection/collection.module#CollectionModule'
-			}
-		])
+				loadChildren: './collection/collection.module#CollectionModule',
+				data: {
+					breadcrumbs: 'Collections',
+				},
+			},
+		]),
 	],
 	declarations: [
 		AppComponent,
-		SidenavComponent
+		SidenavComponent,
 	],
 	providers: [
 		DbService,
-		HttpService
+		HttpService,
 	],
 	bootstrap: [
-		AppComponent
-	]
+		AppComponent,
+	],
 })
 export class AppModule { }

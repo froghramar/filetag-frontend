@@ -1,36 +1,44 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { MatFormFieldModule, MatIconModule, MatInputModule, MatListModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule, MatStepperModule } from '@angular/material';
 
 import { CollectionListComponent } from '../collection-list/collection-list.component';
 import { CollectionService } from './collection.service';
 import { CollectionCreatorComponent } from '../collection-creator/collection-creator.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 	imports: [
 		CommonModule,
+		FormsModule,
+		MatButtonModule,
 		MatFormFieldModule,
 		MatIconModule,
 		MatInputModule,
 		MatListModule,
+		MatStepperModule,
+		ReactiveFormsModule,
 		RouterModule.forChild([
 			{
 				path: '',
-				component: CollectionListComponent
+				component: CollectionListComponent,
 			},
 			{
 				path: 'create',
-				component: CollectionCreatorComponent
+				component: CollectionCreatorComponent,
+				data: {
+					breadcrumbs: 'Create',
+				},
 			}
 		]),
 	],
 	declarations: [
 		CollectionCreatorComponent,
-		CollectionListComponent
+		CollectionListComponent,
 	],
 	providers: [
-		CollectionService
-	]
+		CollectionService,
+	],
 })
 export class CollectionModule { }

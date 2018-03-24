@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-	isSidenavOpened = true;
+	isSidenavOpened = false;
 	isFullWidthEnabled = false;
 
 	constructor() { }

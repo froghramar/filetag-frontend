@@ -1,3 +1,33 @@
-<p>
-  collection-creator works!
-</p>
+<mat-horizontal-stepper linear="true" #stepper="matHorizontalStepper">
+	<mat-step [stepControl]="collectionDetailsFormGroup">
+		<form [formGroup]="collectionDetailsFormGroup">
+			<ng-template matStepLabel>Enter Details</ng-template>
+			<mat-form-field>
+				<input matInput placeholder="Last name, First name" formControlName="collectionDetailsFormCtrl" required>
+			</mat-form-field>
+			<div>
+				<button mat-button matStepperNext>Next</button>
+			</div>
+		</form>
+	</mat-step>
+	<mat-step [stepControl]="folderSelectionFormGroup">
+		<form [formGroup]="folderSelectionFormGroup">
+			<ng-template matStepLabel>Select Folder</ng-template>
+			<mat-form-field>
+				<input matInput placeholder="Address" formControlName="folderSelectionFormCtrl" required>
+			</mat-form-field>
+			<div>
+				<button mat-button matStepperPrevious>Back</button>
+				<button mat-button matStepperNext>Next</button>
+			</div>
+		</form>
+	</mat-step>
+	<mat-step>
+		<ng-template matStepLabel>Summary</ng-template>
+		You are now done.
+		<div>
+			<button mat-button matStepperPrevious>Back</button>
+			<button mat-button (click)="stepper.reset()">Reset</button>
+		</div>
+	</mat-step>
+</mat-horizontal-stepper>
