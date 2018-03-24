@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { HttpService } from './http.service';
-import { Observable } from 'rxjs/Observable';
+import { Injectable, } from '@angular/core';
+import { HttpService, } from './http.service';
+import { Observable, } from 'rxjs/Observable';
 
 @Injectable()
 export class DbService {

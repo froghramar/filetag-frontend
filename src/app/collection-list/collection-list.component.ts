@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { CollectionService } from '../collection/collection.service';
-import { Router } from '@angular/router';
+import { Component, OnInit, } from '@angular/core';
+import { CollectionService, } from '../collection/collection.service';
+import { Router, } from '@angular/router';
 
 @Component({
 	selector: 'app-collection-list',
 	templateUrl: './collection-list.component.html',
-	styleUrls: ['./collection-list.component.scss']
+	styleUrls: [
+		'./collection-list.component.scss',
+	],
 })
 export class CollectionListComponent implements OnInit {
 
@@ -51,7 +53,7 @@ export class CollectionListComponent implements OnInit {
 	}
 
 	goToCollectionCreator() {
-		this.router.navigate(['/collections/create']);
+		this.router.navigate(['/collections/create', ]);
 	}
 
 }

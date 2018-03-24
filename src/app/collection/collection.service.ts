@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
-import { ICollection } from '../../models/collection';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import { DbService } from '../../services/db.service';
+import { Injectable, } from '@angular/core';
+import { ICollection, } from '../../models/collection';
+import { Observable, } from 'rxjs/Observable';
+import { DbService, } from '../../services/db.service';
 
 @Injectable()
 export class CollectionService {

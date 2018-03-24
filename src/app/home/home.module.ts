@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home.component';
-import { RouterModule } from '@angular/router';
+import { NgModule, } from '@angular/core';
+import { CommonModule, } from '@angular/common';
+import { HomeComponent, } from './home.component';
+import { RouterModule, } from '@angular/router';
 
 @NgModule({
 	imports: [
@@ -10,11 +10,11 @@ import { RouterModule } from '@angular/router';
 			{
 				path: '',
 				component: HomeComponent
-			}
-		])
+			},
+		]),
 	],
 	declarations: [
-		HomeComponent
-	]
+		HomeComponent,
+	],
 })
 export class HomeModule { }

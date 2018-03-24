@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import { Injectable, } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams, } from '@angular/common/http';
+import { Observable, } from 'rxjs/Observable';
 
 @Injectable()
 export class HttpService {
@@ -18,15 +18,16 @@ export class HttpService {
 	delete(url?: string) {
 
 		return new Promise( (resolve: Function, reject: Function) => {
-			this.httpClient.delete(url, {headers: this.httpHeaders})
-				.subscribe(
-					(response: Response) => {
-						resolve(response);
-					},
-					(err) => {
-						reject(err);
-					}
-				);
+			this.httpClient.delete(url, {
+				headers: this.httpHeaders,
+			}).subscribe(
+				(response: Response) => {
+					resolve(response);
+				},
+				(err) => {
+					reject(err);
+				}
+			);
 		});
 	}
 
@@ -42,7 +43,7 @@ export class HttpService {
 		return < Observable <T> > this.httpClient.get(url, {
 			headers: this.httpHeaders,
 			params: httpParams,
-			responseType: 'json'
+			responseType: 'json',
 		});
 	}
 
@@ -58,21 +59,22 @@ export class HttpService {
 		return < Observable <T> > this.httpClient.post(url, data, {
 			headers: this.httpHeaders,
 			params: httpParams,
-			responseType: 'json'
+			responseType: 'json',
 		});
 	}
 
 	put(url: string, data: any) {
 		return new Promise( (resolve: Function, reject: Function) => {
-			this.httpClient.put(url, data, {headers: this.httpHeaders})
-				.subscribe(
-					(response: Response) => {
-						resolve(response);
-					},
-					(err) => {
-						reject(err);
-					}
-				);
+			this.httpClient.put(url, data, {
+				headers: this.httpHeaders,
+			}).subscribe(
+				(response: Response) => {
+					resolve(response);
+				},
+				(err) => {
+					reject(err);
+				}
+			);
 		});
 	}
 
