@@ -17,6 +17,7 @@ export class CollectionCreatorComponent implements OnInit {
 
 	ngOnInit() {
 		this.collectionDetailsFormGroup = this.formBuilder.group({
+			createNewFolder: [ true, Validators.required, ],
 			collectionDetailsFormCtrl: [ '', Validators.required, ],
 		});
 		this.folderSelectionFormGroup = this.formBuilder.group({
