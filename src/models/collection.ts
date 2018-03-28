@@ -1,15 +1,15 @@
 export interface ICollection {
 	_id?: string;
-	Directory: string;
-	Name: string;
-	UrlPath: string;
+	Directory?: string;
+	Name?: string;
+	UrlPath?: string;
 }
 
 export class Collection implements ICollection {
 	_id?: string;
-	Directory: string;
-	Name: string;
-	UrlPath: string;
+	Directory?: string;
+	Name?: string;
+	UrlPath?: string;
 
 	constructor(collection: ICollection) {
 		if (collection._id) {

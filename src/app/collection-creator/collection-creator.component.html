@@ -2,20 +2,16 @@
 	<mat-step [stepControl]="collectionDetailsFormGroup">
 		<form [formGroup]="collectionDetailsFormGroup">
 			<ng-template matStepLabel>Enter Details</ng-template>
-			<mat-slide-toggle formControlName="createNewFolder">
-				I want to create a new folder
-			</mat-slide-toggle>
-			<div [ngSwitch]="collectionDetailsFormGroup.value.createNewFolder">
-				<div *ngSwitchCase="true">
-					<mat-form-field>
-						<input matInput placeholder="Last name, First name" formControlName="collectionDetailsFormCtrl" required>
-					</mat-form-field>
-				</div>
-			</div>
-			<div>
-				<button mat-button matStepperNext>Next</button>
-			</div>
+			<mat-slide-toggle formControlName="createNewDirectory">
+				I want to create a new directory
+			</mat-slide-toggle><br>
+			<mat-form-field>
+				<input matInput placeholder="Collection Directory" formControlName="Directory" appForbidden="bob">
+			</mat-form-field>
 		</form>
+		<div>
+			<button mat-button matStepperNext>Next</button>
+		</div>
 	</mat-step>
 	<mat-step [stepControl]="folderSelectionFormGroup">
 		<form [formGroup]="folderSelectionFormGroup">
